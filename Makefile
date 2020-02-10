@@ -2,7 +2,7 @@ build:
 	docker build -t opstree/pythoncici .
 
 run:
-	docker rm -f pythonci || true
+	docker rm -f pythoncici || true
 	docker run -itd --name pythoncici -v ${PWD}:/root opstree/pythoncici
 
 python-makemigration-and-migrate:
