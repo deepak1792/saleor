@@ -1,5 +1,5 @@
 build:
-	docker build -t opstree/pythoncici
+	docker build -t opstree/pythoncici .
 
 run:
 	docker rm -f pythonci || true
