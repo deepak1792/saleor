@@ -2,16 +2,16 @@ pothon-makemigration-and-migrate:
 	docker exec -i -u root pi bash -c "python3 manage.py makemigrations && python3 manage.py migrate"
 
 test-environment:
-	docker exec -i -u root pi bash -c "which python3"
+	docker exec -i -u root pi:latest bash -c "which python3"
 
 test-coverage:
-	docker exec -i -u root pi bash -c "python3 manage.py test && python3 -m pytest -s --cov=. --cov-report=html"
+	docker exec -i -u root pi:latest bash -c "python3 manage.py test && python3 -m pytest -s --cov=. --cov-report=html"
 
 black-test:
-	docker exec -i -u root pi bash -c "black saleor"
+	docker exec -i -u root pi:latest bash -c "black saleor"
 
 security-issue:
-	docker exec -i -u root pi bash -c "bandit slaeor"
+	docker exec -i -u root pi:latest bash -c "bandit slaeor"
 
 pyflakes-analyzes:
 	docker exec -i -u root pythoncici bash -c "pyflakes saleor"
